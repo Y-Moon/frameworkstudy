@@ -1,0 +1,17 @@
+# maven ignore
+target/
+*.jar
+!.mvn/wrapper/*
+*.war
+*.zip
+*.tar
+*.tar.gz
+.flattened-pom.xml
+# idea ignore
+.idea/
+*.ipr
+*.iml
+*.iws
+
+# RxJava ignore
+/RxJava

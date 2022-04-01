@@ -1,0 +1,4 @@
+# 不添加target
+/target
+# .idea文件夹
+.idea

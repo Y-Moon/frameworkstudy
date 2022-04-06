@@ -1,6 +1,12 @@
 package demo;
 
+import org.junit.Test;
+
 import java.math.BigDecimal;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.stream.IntStream;
 
 public class Demo55 {
@@ -8,15 +14,13 @@ public class Demo55 {
         long i = 2149 * 1024 * 256;
         System.out.println(getSize(i,2));
     }
+    @Test
+    public void testDemo1() throws ClassNotFoundException, SQLException {
+       Class.forName("com.mysql.cj.jdbc.Driver");
+        final Connection connection = DriverManager.getConnection("jdbc:mysql://192.168.160.179:6033/gamelife_hotel?serverTimezone=UTC&characterEncoding=UTF-8", "defend_develop_sec", "defend_develop_sec");
+        final Statement statement = connection.createStatement();
 
-    /**
-     * <p>描述：根据大小，动态获取拿到最相近的单位</p>
-     *
-     * @param size 文件大小（KB）
-     * @return java.lang.String
-     * @author 王泽强 (zqw.wang@shunwang.com)
-     * @date 2022/3/31 15:52
-     */
+    }
     public static String getSize(long size,int newScale) {
         if (size <= 0) {
             return "0KB";
